@@ -6,12 +6,20 @@
   <title>FeedbackForge - Customer Feedback Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>.glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}.gradient-text{background:linear-gradient(135deg,#14b8a6,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}</style>
+  <style>
+    .glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+    .gradient-text{background:linear-gradient(135deg,#14b8a6,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  </style>
 </head>
 <body class="bg-[#0a0a0f] min-h-screen text-white">
   <header class="glass sticky top-0">
     <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
-      <div class="flex items-center gap-4"><div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center shadow-lg"><i class="fas fa-comment-dots text-2xl"></i></div><div><h1 class="text-2xl font-bold gradient-text">FeedbackForge</h1><p class="text-xs text-slate-400">Insight Studio</p></div></div>
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center shadow-lg">
+          <i class="fas fa-comment-dots text-2xl"></i>
+        </div>
+        <div><h1 class="text-2xl font-bold gradient-text">FeedbackForge</h1><p class="text-xs text-slate-400">Insight Studio</p></div>
+      </div>
     </div>
   </header>
   <main class="max-w-7xl mx-auto px-8 py-10">
@@ -22,18 +30,38 @@
       <div class="glass rounded-2xl p-6"><p class="text-slate-400 text-sm mb-2">Insights</p><p class="text-4xl font-bold text-teal-400">34</p></div>
     </div>
     <div class="grid lg:grid-cols-2 gap-8">
-      <div class="glass rounded-2xl p-8"><h2 class="text-xl font-bold mb-6"><i class="fas fa-chart-pie text-teal-400 mr-3"></i>Sentiment Analysis</h2>
+      <div class="glass rounded-2xl p-8">
+        <h2 class="text-xl font-bold mb-6"><i class="fas fa-chart-pie text-teal-400 mr-3"></i>Sentiment Analysis</h2>
         <div class="space-y-4">
-          {[{label:'Product Quality',positive:85,negative:15},{label:'Customer Support',positive:72,negative:28},{label:'Pricing',positive:65,negative:35}].map(s=>`
-          <div><div class="flex justify-between mb-1"><span class="text-sm">${s.label}</span><span class="text-sm text-green-400">${s.positive}%</span></div><div class="h-3 bg-white/10 rounded-full"><div class="h-full bg-gradient-to-r from-teal-500 to-blue-500 rounded-full" style="width:${s.positive}%"></div></div></div>
-          `).join('')}
+          <div><div class="flex justify-between mb-1"><span class="text-sm">Product Quality</span><span class="text-sm text-green-400">85%</span></div><div class="h-3 bg-white/10 rounded-full"><div class="h-full bg-gradient-to-r from-teal-500 to-blue-500 rounded-full" style="width:85%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-sm">Customer Support</span><span class="text-sm text-green-400">72%</span></div><div class="h-3 bg-white/10 rounded-full"><div class="h-full bg-gradient-to-r from-teal-500 to-blue-500 rounded-full" style="width:72%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-sm">Pricing</span><span class="text-sm text-green-400">65%</span></div><div class="h-3 bg-white/10 rounded-full"><div class="h-full bg-gradient-to-r from-teal-500 to-blue-500 rounded-full" style="width:65%"></div></div></div>
         </div>
       </div>
-      <div class="glass rounded-2xl p-8"><h2 class="text-xl font-bold mb-6"><i class="fas fa-lightbulb text-blue-400 mr-3"></i>Key Insights</h2>
+      <div class="glass rounded-2xl p-8">
+        <h2 class="text-xl font-bold mb-6"><i class="fas fa-lightbulb text-blue-400 mr-3"></i>Key Insights</h2>
         <div class="space-y-3">
-          {[{insight:'Users want darker UI option',impact:'High',votes:45},{insight:'Mobile app needs offline mode',impact:'Medium',votes:32},{insight:'Pricing considered fair',impact:'Positive',votes:89}].map(i=>`
-          <div class="bg-white/5 rounded-xl p-4"><div class="flex items-center justify-between mb-2"><p class="font-semibold">${i.insight}</p><span class="text-xs px-2 py-1 rounded-lg ${i.impact==='High'?'bg-red-500/20 text-red-400':i.impact==='Medium'?'bg-yellow-500/20 text-yellow-400':'bg-green-500/20 text-green-400'}">${i.impact}</span></div><p class="text-slate-400 text-sm">${i.votes} votes</p></div>
-          `).join('')}
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="font-semibold">Users want darker UI option</p>
+              <span class="text-xs px-2 py-1 rounded-lg bg-red-500/20 text-red-400">High</span>
+            </div>
+            <p class="text-slate-400 text-sm">45 votes</p>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="font-semibold">Mobile app needs offline mode</p>
+              <span class="text-xs px-2 py-1 rounded-lg bg-yellow-500/20 text-yellow-400">Medium</span>
+            </div>
+            <p class="text-slate-400 text-sm">32 votes</p>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="font-semibold">Pricing considered fair</p>
+              <span class="text-xs px-2 py-1 rounded-lg bg-green-500/20 text-green-400">Positive</span>
+            </div>
+            <p class="text-slate-400 text-sm">89 votes</p>
+          </div>
         </div>
       </div>
     </div>
